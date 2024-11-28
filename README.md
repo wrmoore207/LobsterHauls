@@ -21,4 +21,4 @@ Higher level data was retrieved from NOAA going back to 1950 but at this time, t
 # Results
 
 Value of Annual Lobster Haul by County
-![Annual Value](Figs\CountyRevenue.svg "Title")
+![Annual Value](\Figs\CountyRevenue.svg "Title")
