@@ -27,7 +27,7 @@ Higher-level data was retrieved from NOAA going back to 1950, but at this time, 
 ![State Revenue](Figs/StateRevenue.svg "State Lobster Revenue Over Time")
 
 ### Total Lobster Value in Pounds Over Time
-![State Totals Historical](Figs/StateTotalsHistorical.svg "State Lobster Totals Over Time")
+![State Totals Historical](Figs/TotalDollarsPerYear.svg "State Lobster Totals Over Time")
 
 ### Price Per Pound per County
 ![Price Per Pound per County](Figs/CountyPricePerPound.svg "Price Per Pound per County")
