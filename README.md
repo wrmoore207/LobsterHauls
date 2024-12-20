@@ -36,13 +36,13 @@ Higher-level data was retrieved from NOAA going back to 1950, but at this time, 
 ![Statewide price per pound](Figs/StatePricePerPound.svg "Price Per Pound Statewide")
 
 ### Statewide Year-Over-Year Changes in Reported Poundage
-![Statewide yoy poundage deltas](Figs\StatewidePoundDelta.svg "Changes in Poundage")
+![Statewide yoy poundage deltas](Figs/StatewidePoundDelta.svg "Changes in Poundage")
 
 ### Statewide Year-Over-Year Changes in Fishery Value
-![Statewide yoy fishery value](Figs\StatewideRevenueDelta.svg "Changes in Value")
+![Statewide yoy fishery value](Figs/StatewideRevenueDelta.svg "Changes in Value")
 
 ### County Level Year-Over-Year Changes in Reported Poundage
-![State Totals Historical](Figs\CountyPoundDelta.svg "Changes in County Level Poundage")
+![State Totals Historical](Figs/CountyPoundDelta.svg "Changes in County Level Poundage")
 
 ### Statewide Year-Over-Year Changes in Fishery Value per County
-![State Totals Historical](Figs\CountyValueDelta.svg "Changes in Value")
+![State Totals Historical](Figs/CountyValueDelta.svg "Changes in Value")
