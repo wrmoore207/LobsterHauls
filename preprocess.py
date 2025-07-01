@@ -6,49 +6,52 @@ Access the .csv file itself rather than re-run preprocessing every time or keep 
 
 import pandas as pd
 
-# Load the data
-file_path = "Data\countyLobsters.txt"
-data = pd.read_csv(file_path, delim_whitespace=True)
+def run_preprocessing():
 
-print(data.shape)
-'''
-Preprocessing and Filtering
-'''
-# Convert the 'POUNDS' column to integers
-data['POUNDS'] = data['POUNDS'].str.replace(',', '').astype(int)
+    # Load the data
+    file_path = "Data/countyLobsters.txt"
 
-# Remove the dollar signs and commas, then convert to integers
-data['VALUE'] = data['VALUE'].str.replace('[\$,]', '', regex=True).astype(int)
+    data = pd.read_csv(file_path, delim_whitespace=True)
 
-# List of counties to drop
-counties_to_drop = ['NOT-SPECIFIED', 'KNOX/WALDO', 'UNKNOWN']
+    print(data.shape)
+    '''
+    Preprocessing and Filtering
+    '''
+    # Convert the 'POUNDS' column to integers
+    data['POUNDS'] = data['POUNDS'].str.replace(',', '').astype(int)
 
-# Filter the data to exclude the specified counties
-filtered_data = data[~data['COUNTY'].isin(counties_to_drop)]
+    # Remove the dollar signs and commas, then convert to integers
+    data['VALUE'] = data['VALUE'].str.replace(r'[\$,]', '', regex=True).astype(int)
 
-# Update the COUNTY column to have title case
-filtered_data['COUNTY'] = filtered_data['COUNTY'].str.title()
+    # List of counties to drop
+    counties_to_drop = ['NOT-SPECIFIED', 'KNOX/WALDO', 'UNKNOWN']
 
-county_to_fips = {
-    "Androscoggin": "001",
-    "Aroostook": "003",
-    "Cumberland": "005",
-    "Franklin": "007",
-    "Hancock": "009",
-    "Kennebec": "011",
-    "Knox": "013",
-    "Lincoln": "015",
-    "Oxford": "017",
-    "Penobscot": "019",
-    "Piscataquis": "021",
-    "Sagadahoc": "023",
-    "Somerset": "025",
-    "Waldo": "027",
-    "Washington": "029",
-    "York": "031"
-}
+    # Filter the data to exclude the specified counties
+    filtered_data = data[~data['COUNTY'].isin(counties_to_drop)]
 
-filtered_data['FIPS'] = filtered_data['COUNTY'].map(county_to_fips)
+    # Update the COUNTY column to have title case
+    filtered_data['COUNTY'] = filtered_data['COUNTY'].str.title()
 
-# Save the data as a .csv for consistency
-filtered_data.to_csv('Data\preprocessed_data.csv', index=True)
+    county_to_fips = {
+        "Androscoggin": "001",
+        "Aroostook": "003",
+        "Cumberland": "005",
+        "Franklin": "007",
+        "Hancock": "009",
+        "Kennebec": "011",
+        "Knox": "013",
+        "Lincoln": "015",
+        "Oxford": "017",
+        "Penobscot": "019",
+        "Piscataquis": "021",
+        "Sagadahoc": "023",
+        "Somerset": "025",
+        "Waldo": "027",
+        "Washington": "029",
+        "York": "031"
+    }
+
+    filtered_data['FIPS'] = filtered_data['COUNTY'].map(county_to_fips)
+
+    # Save the data as a .csv for consistency
+    filtered_data.to_csv('Data/preprocessed_data.csv', index=True)
